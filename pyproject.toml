@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-shopping-assistant"
+version = "0.1.0"
+description = "A production-ready foundation for an AI-powered shopping assistant."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "AI Shopping Assistant Contributors" }]
+dependencies = [
+    "datasets>=5.0.1",
+    "ipykernel>=7.3.0",
+    "pandas>=3.0.5",
+    "python-dotenv>=1.2.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "pre-commit>=3.8",
+]
+
+[project.scripts]
+shopping-assistant = "shopping_assistant.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shopping_assistant"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers --strict-config"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["shopping_assistant"]
+
+[tool.coverage.run]
+branch = true
+source = ["shopping_assistant"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+exclude_also = ["if __name__ == .__main__.:"]
