@@ -1,5 +1,11 @@
 ## This document contains info on what all analysis was done to develop the ai-shopping-assistant
 
+### Datasets
+[Meta Categories](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/blob/main/raw/meta_categories/meta_Sports_and_Outdoors.jsonl)
+[Review Categories](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/blob/main/raw/review_categories/Sports_and_Outdoors.jsonl)
+
+
+
 ### Dataset Architecture Comparison
 
 | Metric / Feature | [Flipkart Fashion](https://www.kaggle.com/datasets/aaditshukla/flipkart-fasion-products-dataset) | [E-Commerce Products](https://www.kaggle.com/datasets/mewbius/ecommerce-products) | [Amazon Reviews 2023: Sports & Outdoors](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/tree/main) |
