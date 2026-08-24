@@ -51,6 +51,7 @@
 
 Instead of joining datasets into a single frame, implement a decoupled two-phase retrieval pattern:
 
+```text
 USER QUERY
                           │
                           ▼
@@ -64,6 +65,7 @@ USER QUERY
         │  Phase 2: Product Review          │ ◄── (Relational Store / SQLite / Summary)
         │  Sentiment & Experience Extraction│     Look up top reviews by `parent_asin`
         └───────────────────────────────────┘
+```
 
 
 #### Phase 1: Product Catalog Vector Search (ChromaDB)
